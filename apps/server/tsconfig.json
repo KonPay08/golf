@@ -5,7 +5,7 @@
       "skipLibCheck": true,
       "strict": false,
       "forceConsistentCasingInFileNames": true,
-      "noEmit": true,
+      "noEmit": false,
       "esModuleInterop": true,
       "module": "commonjs",
       "moduleResolution": "node",
@@ -23,6 +23,7 @@
         ]
       },
       "outDir": "./dist",
+      "rootDir": "./src",
       "lib": [
         "dom",
         "dom.iterable",
@@ -31,8 +32,8 @@
     },
     "include": [
       "next-env.d.ts",
-      "**/*.ts",
-      "**/*.tsx"
+      "src/**/*.ts",
+      "src/**/*.tsx"
     ],
     "exclude": [
       "node_modules"
