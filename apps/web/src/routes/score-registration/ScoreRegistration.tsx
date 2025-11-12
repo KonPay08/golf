@@ -5,7 +5,9 @@ import ScoreTable, { type ScoreRow } from "../../presentation/ScoreTable";
 import SwitchTabs, { type HalfTab } from "../../presentation/SwitchTabs";
 import ScoreInput from "../../presentation/ScoreInput";
 import FocusNavigator from "../../presentation/FocusNavigator";
+import ConfettiAnimation from "../../presentation/ConfettiAnimation";
 import { useRound, useEntryScore } from "../../api";
+import { useAudio } from "../../providers/AudioProvider";
 import useScoreTableScroll from "./useScoreTableScroll";
 
 const COLUMNS = [
@@ -21,9 +23,11 @@ export default function ScoreRegistration() {
   const [courseType, setCourseType] = useState<HalfTab>("OUT");
   const [focusedIndex, setFocusedIndex] = useState(0);
   const [pendingScore, setPendingScore] = useState<{ holeNumber: number; stroke: number } | null>(null);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const { data: round, isLoading, error } = useRound(roundId);
   const entryScoreMutation = useEntryScore(roundId);
+  const { play } = useAudio();
 
   const {
     topRegionRef,
@@ -108,6 +112,22 @@ export default function ScoreRegistration() {
 
   const savePendingScore = () => {
     if (pendingScore) {
+      // スコアと par を比較して音声を再生 & アニメーション表示
+      const currentHole = allRows.find((r) => r.hole === pendingScore.holeNumber);
+      if (currentHole) {
+        const diff = pendingScore.stroke - currentHole.par;
+        if (diff <= -2) {
+          play("eagle");
+          setShowConfetti(true);
+        } else if (diff === -1) {
+          play("birdie");
+          setShowConfetti(true);
+        } else if (diff === 0) {
+          play("par");
+          setShowConfetti(true);
+        }
+      }
+
       entryScoreMutation.mutate(pendingScore);
       setPendingScore(null);
     }
@@ -225,6 +245,12 @@ export default function ScoreRegistration() {
           />
         </div>
       </div>
+
+      {/* 紙吹雪アニメーション */}
+      <ConfettiAnimation
+        isVisible={showConfetti}
+        onComplete={() => setShowConfetti(false)}
+      />
     </div>
   );
 }

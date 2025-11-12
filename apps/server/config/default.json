@@ -1,5 +1,5 @@
 {
   "ENV_NAME": "development",
-  "API_PORT": "5446",
+  "API_PORT": "3000",
   "MONGODB_URI": ""
 }
