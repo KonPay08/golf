@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "build:shared": "pnpm --filter @golf/shared build",
-    "build:server": "pnpm --filter server build",
+    "build:server": "pnpm --filter golf-server build",
     "build": "pnpm build:shared && pnpm build:server",
-    "start:server": "pnpm --filter server start"
+    "start:server": "pnpm --filter golf-server start"
   },
   "engines": {
     "node": ">=20.0.0",
