@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { RoundsController } from "./controllers";
-import { asyncHandler } from "~/src/shared/http/middleware";
+import { asyncHandler } from "~/shared/http/middleware";
 
 export function createRoundsRouter(controller: RoundsController): Router {
   const router = Router();

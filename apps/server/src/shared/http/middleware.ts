@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { Controller, HttpError } from "~/src/shared/http/types";
+import { Controller, HttpError } from "~/shared/http/types";
 
 export function errorHandler(err: Error, req: Request, res: Response, next: NextFunction) {
   if (err instanceof HttpError) {

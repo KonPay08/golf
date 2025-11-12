@@ -1,6 +1,6 @@
 import { MongoClient, Db } from "mongodb";
-import { RoundRepositoryMongo } from "~/src/rounds/infra/mongo/RoundRepositoryMongo";
-import { Round } from "~/src/rounds/domain/entities";
+import { RoundRepositoryMongo } from "~/rounds/infra/mongo/RoundRepositoryMongo";
+import { Round } from "~/rounds/domain/entities";
 
 describe("RoundRepositoryMongo", () => {
   let client: MongoClient;

@@ -1,5 +1,5 @@
-import { HttpError } from "~/src/shared/http/types";
-import { CreateRoundCommand, EntryScoreCommand } from "~/src/rounds/application/dto";
+import { HttpError } from "~/shared/http/types";
+import { CreateRoundCommand, EntryScoreCommand } from "~/rounds/application/dto";
 
 export function validateCreateRoundRequest(body: unknown): CreateRoundCommand {
   if (!body || typeof body !== "object") {

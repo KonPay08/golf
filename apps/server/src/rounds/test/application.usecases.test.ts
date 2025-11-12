@@ -1,6 +1,6 @@
-import { CreateRoundUseCase, EntryScoreUseCase, SummarizeRoundUseCase, GetRoundUseCase, ListRoundsUseCase } from "~/src/rounds/application/usecases";
-import { RoundRepositoryInMemory } from "~/src/rounds/infra/memory/RoundRepositoryInMemory";
-import { CreateRoundCommand, EntryScoreCommand, SummarizeRoundQuery, GetRoundQuery, ListRoundsQuery } from "~/src/rounds/application/dto";
+import { CreateRoundUseCase, EntryScoreUseCase, SummarizeRoundUseCase, GetRoundUseCase, ListRoundsUseCase } from "~/rounds/application/usecases";
+import { RoundRepositoryInMemory } from "~/rounds/infra/memory/RoundRepositoryInMemory";
+import { CreateRoundCommand, EntryScoreCommand, SummarizeRoundQuery, GetRoundQuery, ListRoundsQuery } from "~/rounds/application/dto";
 
 describe("CreateRoundUseCase", () => {
   let repo: RoundRepositoryInMemory;

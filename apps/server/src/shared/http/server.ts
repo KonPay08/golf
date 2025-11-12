@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
-import { errorHandler, notFoundHandler } from "~/src/shared/http/middleware";
+import { errorHandler, notFoundHandler } from "~/shared/http/middleware";
 
 export type RouteConfig = {
   path: string;

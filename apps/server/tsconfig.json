@@ -16,14 +16,14 @@
       "jsx": "preserve",
       "jsxImportSource": "@emotion/react",
       "incremental": true,
-      "baseUrl": "./",
+      "outDir": "./dist",
+      "rootDir": "./src",
+      "baseUrl": "./src",
       "paths": {
         "~/*": [
           "./*"
         ]
       },
-      "outDir": "./dist",
-      "rootDir": "./src",
       "lib": [
         "dom",
         "dom.iterable",
@@ -36,7 +36,8 @@
       "src/**/*.tsx"
     ],
     "exclude": [
-      "node_modules"
+      "node_modules",
+      "dist"
     ]
   }
   

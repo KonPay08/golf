@@ -1,6 +1,6 @@
-import { CreateRoundCommand, CreateRoundResult, EntryScoreCommand, EntryScoreResult, GetRoundQuery, GetRoundResult, ListRoundsQuery, ListRoundsResult, SummarizeRoundQuery, SummarizeRoundResult } from "~/src/rounds/application/dto";
+import { CreateRoundCommand, CreateRoundResult, EntryScoreCommand, EntryScoreResult, GetRoundQuery, GetRoundResult, ListRoundsQuery, ListRoundsResult, SummarizeRoundQuery, SummarizeRoundResult } from "~/rounds/application/dto";
 import { IRoundRepository } from "./ports";
-import { createRound, entryScore, summarizeRound } from "~/src/rounds/domain/services";
+import { createRound, entryScore, summarizeRound } from "~/rounds/domain/services";
 import { ulid } from "ulid";
 
 export class CreateRoundUseCase {

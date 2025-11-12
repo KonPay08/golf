@@ -1,6 +1,6 @@
-import { Hole, Round, RoundSummary } from "~/src/rounds/domain/entities";
+import { Hole, Round, RoundSummary } from "~/rounds/domain/entities";
 import type { HoleCount, ParValue } from "@golf/shared";
-import { GOLF_RULES } from "~/src/rounds/domain/constants";
+import { GOLF_RULES } from "~/rounds/domain/constants";
 
 export function createRound({
   id,

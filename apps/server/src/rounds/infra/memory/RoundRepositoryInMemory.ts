@@ -1,5 +1,5 @@
-import { IRoundRepository } from "~/src/rounds/application/ports";
-import { Round } from "~/src/rounds/domain/entities";
+import { IRoundRepository } from "~/rounds/application/ports";
+import { Round } from "~/rounds/domain/entities";
 
 export class RoundRepositoryInMemory implements IRoundRepository {
   #store = new Map<string, Round>();

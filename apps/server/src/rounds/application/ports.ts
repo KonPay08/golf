@@ -1,4 +1,4 @@
-import { Round } from "~/src/rounds/domain/entities";
+import { Round } from "~/rounds/domain/entities";
 
 export interface IRoundRepository {
   save(r: Round): Promise<void>;

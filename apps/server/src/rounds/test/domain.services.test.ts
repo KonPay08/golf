@@ -1,4 +1,4 @@
-import { createRound, entryScore, summarizeRound } from "~/src/rounds/domain/services";
+import { createRound, entryScore, summarizeRound } from "~/rounds/domain/services";
 
 describe("createRound", () => {
   test("9ホールのラウンドを作成できる", () => {

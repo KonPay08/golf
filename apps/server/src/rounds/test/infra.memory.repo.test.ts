@@ -1,5 +1,5 @@
-import { RoundRepositoryInMemory } from "~/src/rounds/infra/memory/RoundRepositoryInMemory";
-import { createRound } from "~/src/rounds/domain/services";
+import { RoundRepositoryInMemory } from "~/rounds/infra/memory/RoundRepositoryInMemory";
+import { createRound } from "~/rounds/domain/services";
 
 describe("RoundRepositoryInMemory", () => {
   let repo: RoundRepositoryInMemory;

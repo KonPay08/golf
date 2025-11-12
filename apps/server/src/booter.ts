@@ -1,12 +1,12 @@
 import config from "config";
-import { CreateRoundUseCase, EntryScoreUseCase, GetRoundUseCase, ListRoundsUseCase, SummarizeRoundUseCase } from "~/src/rounds/application/usecases";
-import { RoundRepositoryInMemory } from "~/src/rounds/infra/memory/RoundRepositoryInMemory";
-import { RoundRepositoryMongo } from "~/src/rounds/infra/mongo/RoundRepositoryMongo";
-import { RoundsController } from "~/src/rounds/interface/http/controllers";
-import { createRoundsRouter } from "~/src/rounds/interface/http/routes";
-import { createServer, applyRoutes, applyErrorHandlers, startServer } from "~/src/shared/http/server";
-import { connectToMongoDB } from "~/src/shared/db/mongodb";
-import type { IRoundRepository } from "~/src/rounds/application/ports";
+import { CreateRoundUseCase, EntryScoreUseCase, GetRoundUseCase, ListRoundsUseCase, SummarizeRoundUseCase } from "~/rounds/application/usecases";
+import { RoundRepositoryInMemory } from "~/rounds/infra/memory/RoundRepositoryInMemory";
+import { RoundRepositoryMongo } from "~/rounds/infra/mongo/RoundRepositoryMongo";
+import { RoundsController } from "~/rounds/interface/http/controllers";
+import { createRoundsRouter } from "~/rounds/interface/http/routes";
+import { createServer, applyRoutes, applyErrorHandlers, startServer } from "~/shared/http/server";
+import { connectToMongoDB } from "~/shared/db/mongodb";
+import type { IRoundRepository } from "~/rounds/application/ports";
 
 (async () => {
   // Repository selection based on environment

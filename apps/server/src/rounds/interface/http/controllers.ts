@@ -1,7 +1,7 @@
-import { CreateRoundUseCase, EntryScoreUseCase, GetRoundUseCase, ListRoundsUseCase, SummarizeRoundUseCase } from "~/src/rounds/application/usecases";
-import { CreateRoundResult, EntryScoreResult, SummarizeRoundResult, GetRoundResult, ListRoundsResult } from "~/src/rounds/application/dto";
-import { validateCreateRoundRequest, validateEntryScoreRequest } from "~/src/rounds/interface/http/validators";
-import { Controller, HttpError, SuccessResponse } from "~/src/shared/http/types";
+import { CreateRoundUseCase, EntryScoreUseCase, GetRoundUseCase, ListRoundsUseCase, SummarizeRoundUseCase } from "~/rounds/application/usecases";
+import { CreateRoundResult, EntryScoreResult, SummarizeRoundResult, GetRoundResult, ListRoundsResult } from "~/rounds/application/dto";
+import { validateCreateRoundRequest, validateEntryScoreRequest } from "~/rounds/interface/http/validators";
+import { Controller, HttpError, SuccessResponse } from "~/shared/http/types";
 
 export type UseCases = {
   createRound: CreateRoundUseCase;
