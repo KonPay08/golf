@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import type { HoleCount } from "@golf/shared";
 import CreateRoundModal from "../../presentation/CreateRoundModal";
 import { useCreateRound, useListRounds } from "../../api/hooks";

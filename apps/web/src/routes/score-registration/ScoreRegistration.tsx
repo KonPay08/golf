@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { useSearchParams } from "react-router";
+import { useSearchParams } from "react-router-dom";
 import ScoreSummary from "../../presentation/ScoreSummary";
 import ScoreTable, { type ScoreRow } from "../../presentation/ScoreTable";
 import SwitchTabs, { type HalfTab } from "../../presentation/SwitchTabs";
