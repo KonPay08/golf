@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+/* ===== Design Tokens (Tailwind v4 @theme) ===== */
+@theme {
+  /* Brand (緑) */
+  --color-brand: #49C47B;     /* アクティブタブ等 */
+  --color-brand-dark: #3BAE68; /* Brand hover state */
+  --color-brand-fg: #0F1217;  /* Brand上の文字色（白が良ければ white） */
+
+  /* Surface */
+  --color-bg: white;
+  --color-fg: oklch(0.22 0.03 254);
+  --color-muted: oklch(0.55 0.03 254);
+  --color-border: oklch(0.85 0.02 254);
+
+  /* Radius / Shadow */
+  --radius-card: 12px;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.08), 0 6px 20px rgb(0 0 0 / 0.06);
+
+  /* Focus Ring */
+  --ring: var(--color-brand);
+  --ring-offset: white;
+
+  /* Font */
+  --font-sans: "Noto Sans JP", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+               Roboto, "Helvetica Neue", Arial, "Apple Color Emoji",
+               "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* ダークモード（class方式） */
+:root.dark {
+  --color-bg: oklch(0.16 0.03 254);
+  --color-fg: oklch(0.96 0.01 254);
+  --color-muted: oklch(0.75 0.02 254);
+  --color-border: oklch(0.27 0.02 254);
+  --ring-offset: oklch(0.16 0.03 254);
+}
+
+/* ===== Base ===== */
+@layer base {
+  :root { color-scheme: light dark; }
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+  #root { height: 100%; }
+
+  body {
+    @apply antialiased;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    accent-color: var(--color-brand);
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 2px var(--ring-offset),
+      0 0 0 4px var(--ring);
+    border-radius: 6px;
+  }
+}
+
+/* ===== Optional utilities / components ===== */
+@layer utilities {
+  .h-screen-safe { height: 100dvh; }
+  .num-tabular { font-variant-numeric: tabular-nums lining-nums; }
+
+  .scrollbars-on-hover { scrollbar-width: none; }
+  .scrollbars-on-hover:hover,
+  .scrollbars-on-hover:focus-visible,
+  .scrollbars-on-hover:focus-within {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
+  }
+  .scrollbars-on-hover::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  .scrollbars-on-hover:hover::-webkit-scrollbar,
+  .scrollbars-on-hover:focus-visible::-webkit-scrollbar,
+  .scrollbars-on-hover:focus-within::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scrollbars-on-hover:hover::-webkit-scrollbar-thumb,
+  .scrollbars-on-hover:focus-visible::-webkit-scrollbar-thumb,
+  .scrollbars-on-hover:focus-within::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 9999px;
+  }
+}
+
+/* コンポーネント例（必要なら） */
+@layer components {
+  .card {
+    @apply border;
+    border-color: var(--color-border);
+    background: var(--color-bg);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+  }
+}
+
+/* ===== Motion preferences ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
