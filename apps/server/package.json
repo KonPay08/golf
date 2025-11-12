@@ -1,9 +1,11 @@
 {
-  "name": "golf",
+  "name": "golf-server",
   "scripts": {
-    "start": "NODE_ENV=development nodemon -r tsconfig-paths/register --watch 'src' src/booter.ts",
+    "dev": "NODE_ENV=development nodemon -r tsconfig-paths/register --watch 'src' src/booter.ts",
     "test": "NODE_ENV=development jest --detectOpenHandles --runInBand --silent=false --verbose true --watch",
-    "test-all": "NODE_ENV=development jest --detectOpenHandles --runInBand --silent=false --verbose true --coverage"
+    "test-all": "NODE_ENV=development jest --detectOpenHandles --runInBand --silent=false --verbose true --coverage",
+    "build": "tsc",
+    "start": "NODE_ENV=production node -r tsconfig-paths/register dist/booter.js"
   },
   "license": "ISC",
   "dependencies": {

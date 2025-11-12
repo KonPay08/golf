@@ -1,3 +1,4 @@
 config/*
 !config/default.json
 !config/custom-environment-variables.json
+dist

@@ -1,0 +1,15 @@
+{
+  "name": "golf-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:shared": "pnpm --filter @golf/shared build",
+    "build:server": "pnpm --filter server build",
+    "build": "pnpm build:shared && pnpm build:server",
+    "start:server": "pnpm --filter server start"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}
