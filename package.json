@@ -5,8 +5,10 @@
   "scripts": {
     "build:shared": "pnpm --filter @golf/shared build",
     "build:server": "pnpm --filter golf-server build",
-    "build": "pnpm build:shared && pnpm build:server",
-    "start:server": "pnpm --filter golf-server start"
+    "build:server:full": "pnpm build:shared && pnpm build:server",
+    "start:server": "pnpm --filter golf-server start",
+    "build:web": "pnpm --filter golf-web build",
+    "build:web:full": "pnpm build:shared && pnpm build:web"
   },
   "engines": {
     "node": ">=20.0.0",
